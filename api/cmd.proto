@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option go_package = "./;pb";
+package blog;
+
+service Cmd {
+    rpc Execute(Input) returns (Output){}
+}
+
+message Input {
+    string text = 1;
+    string timeout = 2;
+}
+
+message Output {
+    string data = 1;
+}
