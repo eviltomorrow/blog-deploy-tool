@@ -22,4 +22,6 @@ examples/etc
 examples/certs
 examples/log
 
+tests/config.toml
+
 .gitpod.yml

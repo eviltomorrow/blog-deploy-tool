@@ -53,7 +53,7 @@ func printServerVersion() {
 	var buf bytes.Buffer
 	buf.WriteString("Server: \r\n")
 
-	creds, err := client.WithTLS(ServerName, filepath.Join(system.Pwd, "certs", "ca.crt"), filepath.Join(system.Pwd, "certs", "client.pem"), filepath.Join(system.Pwd, "certs", "client.crt"))
+	creds, err := client.WithTLS(ServerName, filepath.Join(system.Pwd, "certs", "ca.crt"), filepath.Join(system.Pwd, "certs", "client.crt"), filepath.Join(system.Pwd, "certs", "client.pem"))
 	if err != nil {
 		buf.WriteString(fmt.Sprintf("   [Fatal] %v\r\n", err))
 		fmt.Println(buf.String())
