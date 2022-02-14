@@ -9,5 +9,5 @@ host = "127.0.0.1"
 port = 37028
 
 [cmd]
-data = "pwd"
+text = "pwd"
 timeout = "10s"

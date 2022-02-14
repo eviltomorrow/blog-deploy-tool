@@ -32,8 +32,8 @@ var clientCmd = &cobra.Command{
 		defer close()
 
 		output, err := stub.Execute(context.Background(), &pb.Input{
-			Text:    "pwd",
-			Timeout: "10s",
+			Text:    cfg.Cmd.Text,
+			Timeout: cfg.Cmd.Timeout,
 		})
 		if err != nil {
 			log.Fatalf("Execute cmd failure, nest error: %v\r\n", err)
