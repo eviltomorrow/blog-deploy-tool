@@ -30,7 +30,7 @@ func (c *Cmd) Execute(ctx context.Context, req *pb.Input) (*pb.Output, error) {
 
 	stdout, stderr, err := cmd.ExecuteCmd(req.Text, t)
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("stdout: %v, stderr: %v, nest error: %v", stdout, stderr, err)
 	}
-	return &pb.Output{Data: fmt.Sprintf("%s\r\n%s", stdout, stderr)}, nil
+	return &pb.Output{Data: stdout}, nil
 }

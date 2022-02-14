@@ -42,6 +42,6 @@ func ExecuteCmd(c string, timeout time.Duration) (string, string, error) {
 
 	case err := <-ch:
 		close(ch)
-		return stdout.String(), stderr.String(), fmt.Errorf("stdout: %v, stderr: %v, nest error: %v", stdout.String(), stderr.String(), err)
+		return stdout.String(), stderr.String(), err
 	}
 }
